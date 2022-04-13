@@ -94,7 +94,7 @@ def predict_note_file():
     if rev_df.iloc[0]['Sentence'] == ('Sentence' or 'sentence'):
         rev_df = rev_df.drop(0)
     rev_df['Sentence'] = rev_df['Sentence'].apply(clean_text)
-    prediction=classifier.predict(rev_df)
+    prediction=classifier.predict(rev_df['Sentence'])
         
     return str(list(prediction))
 
